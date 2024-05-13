@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: DAS-APP
+  servlet:
+     multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+server:
+  port: 9004
+

@@ -1,0 +1,57 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+  graphql:
+    graphiql:
+      enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/excelupdate
+    username: postgres
+    password: 1234
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  properties.hibernate:
+    jdbc:
+      batch_size: 30
+      batch_versioned_data: true
+    order_inserts: true
+    order_updates: true
+
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+security:
+  require-ssl: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+microservices:
+     lmsUrl: https://api-da-dev.mifix.io/Lms/1.0
+     dasUrl: https://api-da-dev.mifix.io/Das/1.0
+     pmsUrl: https://api-da-dev.mifix.io/pms-jms/1.0/
+     oauthUrl:
+     umsUrl: https://api-da-dev.mifix.io/ums-jms/1.0
+#     umsUrl: http://localhost:8004
+
+oauth:
+  url: https://api-da-dev.mifix.io/oauth-jms/1.0/api/auth/
+
+sftp:
+  host: 52.66.176.155
+  port: 22
+  username: sftpuser
+  password: 'jhg!dev'
+  targetpath:  /sftp/DA/dev/
+
+file:
+  upload: /home/sai/Desktop/LOS
